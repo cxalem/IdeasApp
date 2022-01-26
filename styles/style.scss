@@ -1,3 +1,8 @@
+$background: #1A1B35;
+$input-background: #3A3C6C;
+$font-color: #E7E7E7;
+$button-color: #2E329E;
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,3 +13,125 @@ html {
   font-size: 62.5%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+body {
+  background: $background;
+}
+
+form.main-form {
+  width: 368px;
+  margin: 60px auto;
+  button.main-button {
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    border-radius: 5px;
+    border-width: 0px;
+    background: $button-color;
+    color: white;
+    font-size: 1.5rem;
+      &:hover {
+        background: #575aaf;
+        box-shadow: 2px 2px 20px #00002365;
+        transition: 0.2s ease-in-out;
+    }
+  }
+  input::placeholder {
+    color: #7B7C9D;
+  }
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    label {
+      font-size: 4rem;
+      font-weight: bold;
+      color: white;
+      margin: 15px 0;
+    }
+    .input {
+      height: 60px;
+      padding: 10px 20px;
+      background: $input-background;
+      border-width: 0px;
+      border-radius: 5px;
+      color: $font-color;
+      font-size: 1.5rem;
+      &:focus {
+        outline: 0px solid;
+        background: $input-background;
+        color: $font-color;
+      }
+    }
+    input.error {
+      border: 1px solid rgb(255, 72, 0);
+    }
+    input.error.shake {
+      animation: shake 0.3s ease-in-out;
+    }
+    @keyframes shake {
+      0%, 100%{
+        margin-left: 0;
+      }
+      20%, 80% {
+        margin-left: -12px;
+      }
+      40%, 60% {
+        margin-left: 12px;
+      }
+
+      0%, 100%{
+        margin-right: -12px;
+      }
+      20%, 80% {
+        margin-right: 12px;
+      }
+      40%, 60% {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+
+div.app-container {
+  @extend form.main-form;
+  visibility: hidden;
+  h2 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    margin: 15px 0;
+  }
+  form.post-form{
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    .input {
+      height: 50px;
+      padding: 10px 20px;
+      background: $input-background;
+      border-width: 0px;
+      border-radius: 5px 0 0 5px;
+      color:$font-color;
+      font-size: 1.5rem;
+      &:focus {
+        outline: 0px solid;
+      }
+    }
+    .post-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 0 5px 5px 0;
+      border-width: 0px;
+      background: $input-background;
+      &:focus {
+        outline: 0px;
+      }
+    }
+  }
+  h3 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin: 30px 0 0 0;
+  }
+}
+

@@ -3,12 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="module" src="./main.js"></script>
+    <link rel="stylesheet" href="./styles/style.css">
     <title>Ideas App</title>
   </head>
   <body>
-    <div id="app"></div>
-    <name-input></name-input>
+    <div class="container">
+
+      <form class="main-form">
+        <div class="input-container">
+          <label for="ideas-for">Ideas for...</label>
+          <input id="ideas-for" class="ideas input" type="text" placeholder="Alejandro's birthday..." >
+          <label for="your-name">Your Name</label>
+          <input id="your-name" type="text" class="name-input input" placeholder="Type your Name🖊️">
+        </div>
+        <button type="button" class="main-button">Start sending your ideas🚀</button>
+      </form>
+
+      <div class="app-container">
+        <form action="" class="post-form">
+          <input class="input" type="text" placeholder="Type an idea...">
+          <button type="button" class="post-button"><img src="./img/send-icon-web.svg" alt=""></button>
+        </form>
+        <div class="app-list" id="app"></div>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
