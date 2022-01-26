@@ -2,6 +2,7 @@ $background: #1A1B35;
 $input-background: #3A3C6C;
 $font-color: #E7E7E7;
 $button-color: #2E329E;
+$idea-background: #3A3C6C;
 
 * {
   box-sizing: border-box;
@@ -31,12 +32,14 @@ form.main-form {
     color: white;
     font-size: 1.5rem;
       &:hover {
+        cursor: pointer;
         background: #575aaf;
         box-shadow: 2px 2px 20px #00002365;
         transition: 0.2s ease-in-out;
     }
   }
   input::placeholder {
+    font-size: 1.5rem;
     color: #7B7C9D;
   }
   .input-container {
@@ -104,6 +107,33 @@ div.app-container {
   form.post-form{
     display: grid;
     grid-template-columns: 1fr .1fr;
+    input.error {
+      border: 1px solid rgb(255, 72, 0);
+    }
+    input.error.shake {
+      animation: shake 0.3s ease-in-out;
+    }
+    @keyframes shake {
+      0%, 100%{
+        margin-left: 0;
+      }
+      20%, 80% {
+        margin-left: -12px;
+      }
+      40%, 60% {
+        margin-left: 12px;
+      }
+
+      0%, 100%{
+        margin-right: -12px;
+      }
+      20%, 80% {
+        margin-right: 12px;
+      }
+      40%, 60% {
+        margin-right: 0px;
+      }
+    }
     .input {
       height: 50px;
       padding: 10px 20px;
@@ -131,7 +161,53 @@ div.app-container {
     font-size: 2.5rem;
     font-weight: bold;
     color: white;
-    margin: 30px 0 0 0;
+    margin: 30px 0 20px 0;
+  }
+  .app-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 20px;
+    div.idea-container {
+      background: $idea-background;
+      padding: 9px 24px;
+      border-radius: 5px;
+      box-shadow: 2px 2px 7px #00000057;
+      display: flex;
+      flex-direction: column;
+      h4 {
+        font-weight: bold;
+        font-size: 2rem;
+        color: white;
+        margin-bottom: 5px;
+      }
+      span {
+        color: white;
+        font-size: 1.5rem;
+        margin-bottom: 22px;
+      }
+      button {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        height: 28px;
+        padding: 5px 8px;
+        border-radius: 5px 0 5px 0;
+        border-width: 0px;
+        background: $button-color;
+        margin: 95px 0 0 294px;
+        span {
+          color: white;
+          font-size: 1.4rem;
+          margin-left: 8px;
+          height: 1px;
+          padding-right: 1px;
+          padding-top: 5px;
+        }
+        img {
+          width: 1.7rem;
+        }
+      }
+    }
   }
 }
 
