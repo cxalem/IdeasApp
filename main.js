@@ -45,6 +45,13 @@ const addIdea = () => {
   const name = document.createElement('h4');
   const idea = document.createElement('span');
 
+  const likeBtn = document.createElement('button');
+  const heart = document.createElement('img');
+  const likeSpan = document.createElement('span');
+
+  heart.src = './img/heart.svg';
+  likeSpan.textContent = 0;
+
   name.textContent = userNames;
   idea.textContent = postForm.value;
 
@@ -52,7 +59,7 @@ const addIdea = () => {
     postForm.value.length == 0) {
     postForm.classList.add("error", "shake");
   } else {
-    likeBtn();
+    likeBtn.append(heart, likeSpan);
     ideaContainer.append(name, idea, likeBtn);
 
     console.log(likeBtn)
@@ -62,19 +69,6 @@ const addIdea = () => {
 
     postForm.value = '';
   }
-}
-
-const likeBtn = () => {
-  const likeBtn = document.createElement('button');
-  const heart = document.createElement('img');
-  const likeSpan = document.createElement('span');
-
-  heart.src = './img/heart.svg';
-  likeSpan.textContent = 0;
-  likeBtn.classList.add('like-btn');
-
-  likeBtn.append(heart, likeSpan);
-
 }
 
 submitBtn.addEventListener("click", getNameIdeasFor);
