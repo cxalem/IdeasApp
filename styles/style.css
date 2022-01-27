@@ -257,11 +257,10 @@ div.app-container .app-list div.idea-container h4 {
 div.app-container .app-list div.idea-container span {
   color: white;
   font-size: 1.5rem;
-  margin-bottom: 22px;
+  margin-bottom: 10px;
 }
 
 div.app-container .app-list div.idea-container button {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -273,16 +272,16 @@ div.app-container .app-list div.idea-container button {
   border-radius: 5px 0 5px 0;
   border-width: 0px;
   background: #2E329E;
-  margin: 95px 0 0 294px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 div.app-container .app-list div.idea-container button span {
   color: white;
   font-size: 1.4rem;
   margin-left: 8px;
-  height: 1px;
-  padding-right: 1px;
-  padding-top: 5px;
+  padding-top: 10px;
 }
 
 div.app-container .app-list div.idea-container button img {
